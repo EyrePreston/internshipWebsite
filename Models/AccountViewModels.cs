@@ -55,7 +55,7 @@ namespace msvIntro.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password ")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
@@ -64,6 +64,10 @@ namespace msvIntro.Models
 
     public class RegisterViewModel
     {
+
+
+        public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

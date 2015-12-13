@@ -32,8 +32,8 @@ namespace WebApp
             int jobID = Int32.Parse(jobTitle);
 
             ApplicationForm.setValue(jobID);
-
-            Server.Transfer("ApplicationForm.aspx");
+            Response.Redirect("~/CSI/ApplicationForm.aspx");
+            //Server.Transfer("CSI/ApplicationForm.aspx");
 
         }
 
@@ -60,6 +60,10 @@ namespace WebApp
 
         }
 
+        protected void studentHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home/Index");
+        }
     }
 
 }

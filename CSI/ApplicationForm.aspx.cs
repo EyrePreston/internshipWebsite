@@ -49,6 +49,14 @@ namespace WebApp
             txtName.Text = "";
             txtEmail.Text = "";
             txtPhone.Text = "";
+            daysAvailable.Text = "";
+            HoursPerWeek.Text = "";
+            Skills.Text = "";
+            Strengths.Text = "";
+            Accomplishments.Text = "";
+            courseOfStudy.Text = "";
+            radioListYears.ClearSelection();
+            radioCitizenship.ClearSelection(); 
             fileResume.Dispose();
         }
 
@@ -56,7 +64,9 @@ namespace WebApp
         {
 
             MailMessage mail = new MailMessage();
-            mail.Body = "A student is interested in the following internship:" +
+            mail.Body = txtName.Text + " is interested in the following internship:" +
+                "\n" + lblJobTitle.Text +
+                "\n" + lblCompany.Text +
                 "\nStudent's Name: " + txtName.Text +
                 "\nStudent's Email: " + txtEmail.Text +
                 "\nPhone Number: " + txtPhone.Text +
@@ -65,10 +75,16 @@ namespace WebApp
                 "\nSkills: " + Skills.Text +
                 "\nStrengths: " + Strengths.Text +
                 "\nAccomplishments: " + Accomplishments.Text +
-                "\nCourse Of Study" + courseOfStudy.Text +
-                "\nJob Tile: " + lblJobTitle.Text +
-                "\nCompany: " + lblCompany.Text +
-                "\nPlease start the evaluation process";
+                "\nCourse Of Study: " + courseOfStudy.Text +
+                "\n" + radioListYears.SelectedValue.ToString() +
+                "\n" + radioCitizenship.SelectedValue.ToString() +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n";
+                
+
+                
             
             if(this.fileResume.HasFile)
             {
@@ -77,7 +93,7 @@ namespace WebApp
 
             }
 
-            mail.Subject = "Test Subject";
+            mail.Subject = "Internship Application";
             mail.From = new MailAddress("prestoneyre12@gmail.com");
             mail.To.Add("prestoneyre12@gmail.com");
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
@@ -89,8 +105,19 @@ namespace WebApp
             txtName.Text = "";
             txtEmail.Text = "";
             txtPhone.Text = "";
+            daysAvailable.Text = "";
+            HoursPerWeek.Text = "";
+            Skills.Text = "";
+            Strengths.Text = "";
+            Accomplishments.Text = "";
+            courseOfStudy.Text = "";
+            radioListYears.ClearSelection();
+            radioCitizenship.ClearSelection();
             fileResume.Dispose();
 
+
+
+            Response.Redirect("~/CSI/Default.aspx");
         }
 
         public static void setValue(int value)
@@ -98,6 +125,10 @@ namespace WebApp
             indexValue = value;
         }
 
+        protected void btnInternships_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CSI/Default.aspx");
+        }
     }
 
 }

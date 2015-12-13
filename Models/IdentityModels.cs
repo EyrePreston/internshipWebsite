@@ -29,5 +29,7 @@ namespace msvIntro.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<msvIntro.Models.ApplicationForm> ApplicationForms { get; set; }
     }
 }

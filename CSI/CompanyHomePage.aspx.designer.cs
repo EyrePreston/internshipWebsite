@@ -40,24 +40,6 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.FormView FormView2;
         
         /// <summary>
-        /// EmailButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EmailButton;
-        
-        /// <summary>
-        /// rateIntern control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rateIntern;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

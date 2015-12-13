@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Company Name " Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeFile="~/CSI/CompnayHomePage.aspx.cs" CodeBehind="~/CSI/CompnayHomePage.aspx.cs" Inherits="WebApp.CompnayHomePage" %>
+﻿<%@ Page Title="Company Name " Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="CompanyHomePage.aspx.cs" Inherits="WebApp.CompnayHomePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server" >
     
  
@@ -9,12 +9,12 @@
     </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server" >
 
-   <asp:Panel runat="server" ID="CompanyPanel" CssClass="content-wrapper">
-    <asp:Label runat="server" ID="CompanyTitle" Text='<%# Bind("CompanyID") %>'></asp:Label>
+    <asp:Panel runat="server" ID="CompanyPanel" CssClass="content-wrapper">
+    <asp:Label runat="server" ID="CompanyTitle" Text='<%# Eval("CompanyID") %>'></asp:Label>
 
     
 
-    <asp:FormView ID="FormView2" runat="server" CellPadding="4" ForeColor="#333333" DataSourceID="SqlDataSource1" DefaultMode="Insert" >
+    <asp:FormView ID="FormView2" runat="server" CellPadding="4" ForeColor="#333333" DataSourceID="SqlDataSource1" >
 
         
         <EditRowStyle BackColor="#999999" />
@@ -60,16 +60,16 @@
 
         </ItemTemplate>
        <InsertItemTemplate>
-                <span style="background-color: #FFF8DC;">
-                    
-                    <div class="form-horizontal">
+                <span style="background-color: #FFF8DC; width:500px">
+                    <div class="col-sm-1">
+                    <div class="form-group">
                         <br />
-                        <asp:Label runat="server">Job Title:</asp:Label>  
+                        JobTitle 
                        <br />
                         <asp:TextBox ID="Job_TitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
                     </div>
                     <div class="form-group">
-                       <asp:Label runat="server"> CompanyID:</asp:Label>
+                       CompanyID
                         <br />
                         <asp:TextBox ID="CompanyIDTextBox" runat="server" Text='<%# Bind("CompanyID") %>' />
                      </div> 
@@ -98,10 +98,14 @@
                         <br />
                         <asp:TextBox ID="EndDateTextBox" runat="server" Text='<%# Bind("EndDate") %>' />
                         <ajaxToolkit:CalendarExtender ID="EndDateTextBox_CalendarExtender" runat="server" TargetControlID="EndDateTextBox" Format="MMMM d, yyyy" />
-                        
-                    </div>
+                        <br />
+                        <br />
+                   </div>
+                     </div>
+                    <div style="margin-left: 300px">
                     <div class="form-group">    
-                        ContactName:
+                        <br />
+                         ContactName:
                         <br />
                         <asp:TextBox ID="ContactNameTextBox" runat="server" Text='<%# Bind("ContactName") %>' />
                         
@@ -144,10 +148,11 @@
                 <br />
                 <br />
 
-                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" /> 
                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                 <br />
                 <br />
+                </div>
                 </span>
            
             </InsertItemTemplate>
@@ -160,33 +165,32 @@
     </asp:FormView>
     
 
-    <asp:Button ID="EmailButton" runat="server" CommandName="Email" Text="Email Career Department" CssClass="Email Button" />
-   <asp:Button ID="rateIntern" runat="server" CommandName="link" Text="Rate Intern" OnClick="rateIntern_Click" class="btn btn-primary"></asp:Button>
-   
-
-&nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="700px" AutoGenerateColumns="False" DataKeyNames="ID" >
+&nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333"  AutoGenerateColumns="false" DataKeyNames="ID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
 
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
-            <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="JobTitle" />
-            <asp:BoundField DataField="CompanyID" HeaderText="CompanyID" SortExpression="CompanyID" />
-            <asp:BoundField DataField="Postion" HeaderText="Postion" SortExpression="Postion" />
-            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-            <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
-            <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
-            <asp:BoundField DataField="ContactName" HeaderText="ContactName" SortExpression="ContactName" />
-            <asp:BoundField DataField="ContactPhone" HeaderText="ContactPhone" SortExpression="ContactPhone" />
-            <asp:BoundField DataField="ContactEmail" HeaderText="ContactEmail" SortExpression="ContactEmail" />
-            <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-            <asp:BoundField DataField="Openings" HeaderText="Openings" SortExpression="Openings" />
-            <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
+            <asp:BoundField DataField="ID" HeaderText=" ID " InsertVisible="False" ReadOnly="True" SortExpression="ID" ItemStyle-Width="50px" />
+            <asp:BoundField DataField="JobTitle" HeaderText=" JobTitle " SortExpression="JobTitle" ItemStyle-Width="200px" />
+            <asp:BoundField DataField="CompanyID" HeaderText=" CompanyID " SortExpression="CompanyID" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="Postion" HeaderText=" Postion " SortExpression="Postion" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="Description" HeaderText=" Description " SortExpression="Description" ItemStyle-Width="800px"/>
+            <asp:BoundField DataField="StartDate" HeaderText=" StartDate " SortExpression="StartDate" ItemStyle-Width="200px" />
+            <asp:BoundField DataField="EndDate" HeaderText=" EndDate " SortExpression="EndDate" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="ContactName" HeaderText=" ContactName " SortExpression="ContactName" ItemStyle-Width="200px" />
+            <asp:BoundField DataField="ContactPhone" HeaderText=" ContactPhone " SortExpression="ContactPhone" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="ContactEmail" HeaderText=" ContactEmail " SortExpression="ContactEmail" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="Status" HeaderText=" Status " SortExpression="Status" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="Openings" HeaderText=" Openings " SortExpression="Openings" ItemStyle-Width="200px"/>
+            <asp:BoundField DataField="Category" HeaderText=" Category " SortExpression="Category" ItemStyle-Width="200px" />
+            <asp:ButtonField ButtonType="Button" Text="Rate Intern" CommandName="Select" HeaderText="Rate Intern" ControlStyle-CssClass="btn btn-primary" ItemStyle-Width="200px"  />
+           
         </Columns>
+        
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333"  />
         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
         <SortedAscendingCellStyle BackColor="#E9E7E2" />
         <SortedAscendingHeaderStyle BackColor="#506C8C" />

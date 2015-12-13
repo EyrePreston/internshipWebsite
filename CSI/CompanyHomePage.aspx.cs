@@ -14,6 +14,7 @@ namespace WebApp
             if (GridView1.Rows.Count > 0)
             {
                 FormView2.DefaultMode = FormViewMode.Insert;
+                
             }
             else
             {
@@ -40,6 +41,25 @@ namespace WebApp
             internPanel.Visible = false;
 
 
+        }
+
+  
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CompanyPanel.Visible = false;
+            internPanel.Visible = true;
+
+
+
+            TextBox newID = (TextBox)rateInternForm.FindControl("Job_IDTextBox");
+            TextBox newCompanyID = (TextBox)rateInternForm.FindControl("Com_IDTextBox");
+            string ID = GridView1.SelectedRow.Cells[0].Text;
+            string CompanyID = GridView1.SelectedRow.Cells[2].Text;
+
+
+            newID.Text = ID;
+            newCompanyID.Text = CompanyID;
         }
 
 

@@ -209,6 +209,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="CSI\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,12 +259,12 @@
     <Compile Include="CSI\ApplicationForm.aspx.designer.cs">
       <DependentUpon>ApplicationForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CSI\CompnayHomePage.aspx.cs">
-      <DependentUpon>CompnayHomePage.aspx</DependentUpon>
+    <Compile Include="CSI\CompanyHomePage.aspx.cs">
+      <DependentUpon>CompanyHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CSI\CompnayHomePage.aspx.designer.cs">
-      <DependentUpon>CompnayHomePage.aspx</DependentUpon>
+    <Compile Include="CSI\CompanyHomePage.aspx.designer.cs">
+      <DependentUpon>CompanyHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="CSI\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -290,6 +291,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationForm.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\msvIntroContext.cs" />
@@ -320,7 +322,7 @@
     <Content Include="CSI\Account\Register.aspx" />
     <Content Include="CSI\Account\RegisterExternalLogin.aspx" />
     <Content Include="CSI\ApplicationForm.aspx" />
-    <Content Include="CSI\CompnayHomePage.aspx" />
+    <Content Include="CSI\CompanyHomePage.aspx" />
     <Content Include="CSI\Contact.aspx" />
     <Content Include="CSI\Default.aspx" />
     <Content Include="CSI\ratingTable.aspx" />
@@ -328,6 +330,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\LDSBC_Medallion_Logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
@@ -366,7 +369,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -407,6 +412,8 @@
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
     <Content Include="Site.Master" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
