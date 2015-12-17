@@ -60,11 +60,11 @@
                             <b>Category: </b>
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                         </td>
-                        <td class="center-block">
+                        <td style="margin-left:250px">
 
                             <br />
                             <br />
-                            <asp:Button ID="ApplyButton" runat="server" Text="Apply" />
+                            <asp:Button ID="ApplyButton" runat="server" Text="Apply" CssClass="ApplyButton"/>
                         </td>
                     </tr>
                 </table>
@@ -188,6 +188,9 @@
                         <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" CssClass="" />
                         <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                     </td>
+                    <td class="col-sm-1">
+
+                    </td>
                 </tr>
 
             </InsertItemTemplate>
@@ -233,11 +236,11 @@
                             <b>Category: </b>
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                         </td>
-                        <td>
+                        <td style="margin-left:250px;" >
 
                             <br />
                             <br />
-                            <asp:Button ID="ApplyButton" runat="server" Text="Apply"  />
+                            <asp:Button ID="ApplyButton" runat="server" Text="Apply" CssClass="ApplyButton"  />
                         </td>
                     </tr>
                 </table>

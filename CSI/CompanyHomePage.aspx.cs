@@ -11,7 +11,7 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (GridView1.Rows.Count > 0)
+            if (CompanyTable.Rows.Count > 0)
             {
                 FormView2.DefaultMode = FormViewMode.Insert;
                 
@@ -54,8 +54,8 @@ namespace WebApp
 
             TextBox newID = (TextBox)rateInternForm.FindControl("Job_IDTextBox");
             TextBox newCompanyID = (TextBox)rateInternForm.FindControl("Com_IDTextBox");
-            string ID = GridView1.SelectedRow.Cells[0].Text;
-            string CompanyID = GridView1.SelectedRow.Cells[2].Text;
+            string ID = CompanyTable.SelectedRow.Cells[0].Text;
+            string CompanyID = CompanyTable.SelectedRow.Cells[2].Text;
 
 
             newID.Text = ID;

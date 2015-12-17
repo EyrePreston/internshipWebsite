@@ -41,6 +41,12 @@ html {
 }
 img{ width:50px; }
 
+.ApplyButton {
+
+    margin-left: 250px;
+
+
+}
 
 /*body {
     background-color: #fff;
@@ -275,7 +281,7 @@ ul#menu {
 
     .featured .content-wrapper {
         background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+      
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
@@ -506,7 +512,7 @@ fieldset {
         font-size: 1em;
         padding: 4px;
         margin-right: 4px;
-        margin-left: 250px
+        
     }
 
  /*info and errors*/ 
@@ -571,9 +577,14 @@ table{
     
 }
 
-order-spacing: 0;
+#CompanyTable tr th{
+    padding:5px;
+
+}
+
+/*order-spacing: 0;
     margin-top: 0.75em;
-    margin-right: 0px;
+    margin-right: 0px;*/
 
 #filterList{ margin:auto}
 th {
@@ -799,4 +810,4 @@ tr.pager td {
             margin: 0;
         }
 }*/
-/* END: Mobile Styl 
+/* END: Mobile Style */ 

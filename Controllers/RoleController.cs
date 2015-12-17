@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 using Microsoft.AspNet.Identity.EntityFramework;
 using msvIntro.Models;
+using Microsoft.AspNet.Identity;
 
 namespace msvIntro.Controllers
 {
@@ -51,7 +52,6 @@ namespace msvIntro.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-
 
     }
 }

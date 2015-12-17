@@ -6,9 +6,28 @@
 <h2>Create</h2>
 
 
-
-
+<h2>Create Role</h2>
+@Html.ActionLink("List Roles", "Index") 
+<hr />
 @using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div>
+        Role name
+    </div>
+    <p>
+        @Html.TextBox("RoleName")
+    </p>
+    <input type="submit" value="Save" />
+}
+
+
+
+
+
+@*@using (Html.BeginForm())
 {
     <table id="tbrole">
         <tr>
@@ -19,4 +38,4 @@
         </tr>
     </table>
     <input type="submit" value="Create Role" />
-}
+}*@

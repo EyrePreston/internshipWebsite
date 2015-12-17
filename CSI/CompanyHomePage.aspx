@@ -10,6 +10,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server" >
 
     <asp:Panel runat="server" ID="CompanyPanel" CssClass="content-wrapper">
+
+        
     <asp:Label runat="server" ID="CompanyTitle" Text='<%# Eval("CompanyID") %>'></asp:Label>
 
     
@@ -66,12 +68,12 @@
                         <br />
                         JobTitle 
                        <br />
-                        <asp:TextBox ID="Job_TitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
+                        <asp:TextBox ID="Job_TitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' ReadOnly="true" />
                     </div>
                     <div class="form-group">
                        CompanyID
                         <br />
-                        <asp:TextBox ID="CompanyIDTextBox" runat="server" Text='<%# Bind("CompanyID") %>' />
+                        <asp:TextBox ID="CompanyIDTextBox" runat="server" Text='<%# Bind("CompanyID") %>' ReadOnly="true" />
                      </div> 
                      <div class="form-group"> 
                         
@@ -102,7 +104,7 @@
                         <br />
                    </div>
                      </div>
-                    <div style="margin-left: 300px">
+                    <div style="margin-left: 300px; padding-right:2em;">
                     <div class="form-group">    
                         <br />
                          ContactName:
@@ -148,10 +150,14 @@
                 <br />
                 <br />
 
-                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" /> 
+                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert"  /> 
                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                 <br />
                 <br />
+                <div class="col-sm-1">
+
+                </div>
+
                 </div>
                 </span>
            
@@ -165,7 +171,7 @@
     </asp:FormView>
     
 
-&nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333"  AutoGenerateColumns="false" DataKeyNames="ID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
+&nbsp;<asp:GridView ID="CompanyTable" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="10" DataSourceID="SqlDataSource1" ForeColor="#333333"  AutoGenerateColumns="false" DataKeyNames="ID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
 
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -173,7 +179,7 @@
             <asp:BoundField DataField="JobTitle" HeaderText=" JobTitle " SortExpression="JobTitle" ItemStyle-Width="200px" />
             <asp:BoundField DataField="CompanyID" HeaderText=" CompanyID " SortExpression="CompanyID" ItemStyle-Width="200px"/>
             <asp:BoundField DataField="Postion" HeaderText=" Postion " SortExpression="Postion" ItemStyle-Width="200px"/>
-            <asp:BoundField DataField="Description" HeaderText=" Description " SortExpression="Description" ItemStyle-Width="800px"/>
+            <asp:BoundField DataField="Description" HeaderText=" Description " SortExpression="Description" ItemStyle-Width="800px" ItemStyle-Wrap="true"/>
             <asp:BoundField DataField="StartDate" HeaderText=" StartDate " SortExpression="StartDate" ItemStyle-Width="200px" />
             <asp:BoundField DataField="EndDate" HeaderText=" EndDate " SortExpression="EndDate" ItemStyle-Width="200px"/>
             <asp:BoundField DataField="ContactName" HeaderText=" ContactName " SortExpression="ContactName" ItemStyle-Width="200px" />
@@ -187,8 +193,8 @@
         </Columns>
         
         <EditRowStyle BackColor="#999999" />
-        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"  />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"  />
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333"  />
         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
@@ -315,8 +321,8 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" OnClick="InsertCancelButton_Click" />
     </InsertItemTemplate>
     <ItemTemplate>
-       <table>
-        <tr>
+       
+        
            <td>
             FeedbackID:
             <asp:Label ID="FeedbackIDLabel" runat="server" Text='<%# Eval("FeedbackID") %>'  />
@@ -338,7 +344,7 @@
             Attendance:
             <asp:Label ID="AttendanceLabel" runat="server" Text='<%# Bind("Attendance") %>' />
         <br />
-          </tr>
+          
         <td>
             Comments:
             <asp:Label ID="CommentsLabel" runat="server" Text='<%# Bind("Comments") %>'  />
@@ -362,7 +368,7 @@
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
             </td>
-           </table>
+          
     </ItemTemplate>
 
     </asp:FormView>
